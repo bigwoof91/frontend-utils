@@ -1,5 +1,5 @@
-import getQueryParams from './src/get-query-params';
+import { getQueryParam } from './src/get-query-params';
 
 export default jsHelpers = {
-  getQueryParams
+  getQueryParam
 };
