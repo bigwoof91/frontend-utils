@@ -33,12 +33,12 @@ export const addInteger = (num1, num2) => {
   b = n2.split('').reverse();
 
   // set up array for get sum
-  setupArray(a, b);
+  setupArrays(a, b);
   return getSum(a, b);
 };
 
 // setup arrays for getSum
-function setupArray(a, b) {
+function setupArrays(a, b) {
   let difference = 0;
   let aL = a.length;
   let bL = b.length;
