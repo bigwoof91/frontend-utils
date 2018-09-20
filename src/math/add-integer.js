@@ -1,3 +1,4 @@
+// Todo: Add functionality to add a series of numbers
 export const addInteger = (num1, num2) => {
   let n1,
       n2,
