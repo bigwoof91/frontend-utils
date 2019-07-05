@@ -1,2 +1,2 @@
-# js-helpers
+# [wip] js-helpers
 A series of useful JS helpers
