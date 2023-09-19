@@ -1,4 +1,4 @@
-export const getQueryParam = name => {
+export const getQueryParam = (name: string) => {
   const url = window.location.href;
   const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
   const results = regex.exec(url);
