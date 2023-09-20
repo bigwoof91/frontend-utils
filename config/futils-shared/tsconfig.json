@@ -1,0 +1,3 @@
+{
+  "extends": "@futils/tsconfig/base.json"
+}

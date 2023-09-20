@@ -1,0 +1,26 @@
+# https://github.com/actions/labeler
+
+# Add 'repo' label to any root file changes
+'area: repo':
+  - '*'
+
+'area: infra':
+  - .changeset/**/*
+  - .github/**/*
+  - .husky/**/*
+  - _storybook/**/*
+  - .vscode/**/*
+  - tools/**/*
+  - package.json
+
+# core bundle
+'area: core':
+  - packages/core/**/*
+
+# packages
+'area: packages':
+  - packages/**/*
+
+# tests
+'type: test':
+  - '**/__tests__/**/*'

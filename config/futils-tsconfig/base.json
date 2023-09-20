@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Default",
+    "compilerOptions": {
+      "allowJs": true,
+      "allowSyntheticDefaultImports": true,
+      "declaration": true,
+      "esModuleInterop": true,
+      "isolatedModules": true,
+      "lib": ["dom", "ESNext"],
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "noFallthroughCasesInSwitch": true,
+      "resolveJsonModule": true,
+      "skipLibCheck": true,
+      "sourceMap": true,
+      "strict": true,
+      "target": "ESNext",
+      "forceConsistentCasingInFileNames": true,
+      "inlineSources": false,
+      "noUnusedLocals": false,
+      "noUnusedParameters": false,
+      "preserveWatchOutput": true,
+      "verbatimModuleSyntax": true,
+      "types": ["vitest/globals"]
+    },
+    "exclude": ["node_modules"]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@futils/shared",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf node_modules .turbo"
+  },
+  "devDependencies": {
+    "@futils/tsconfig": "workspace:^",
+    "rimraf": "^5.0.1"
+  }
+}

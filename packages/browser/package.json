@@ -1,0 +1,27 @@
+{
+  "name": "@futils/browser",
+  "version": "0.0.0",
+  "description": "Browser-related utilities",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "status": "production",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup --dts",
+    "build:quick": "tsup",
+    "tscheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@futils/tsconfig": "workspace:^",
+    "tsup": "^7.2.0"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.1"
+  }
+}

@@ -1,0 +1,44 @@
+name: Tests
+
+on:
+  pull_request:
+    paths:
+      - 'packages/**'
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  tests:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+
+      - name: Install
+        uses: ./.github/composite-actions/install
+
+      - name: Run lint
+        run: pnpm lint
+      
+      - name: Run type checks
+        run: pnpm tscheck
+
+      - name: Run tests
+        run: pnpm test
+  package-size:
+    name: Diff compressed package sizes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+
+      - name: Install
+        uses: ./.github/composite-actions/install
+
+      - uses: preactjs/compressed-size-action@v2
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          build-script: 'build:quick'
+          # only check commonjs files
+          pattern: '**/dist/**/*.js'
+          exclude: '{**/*.map,**/node_modules/**,**/*.debug.js,**/*.esm.js}'
