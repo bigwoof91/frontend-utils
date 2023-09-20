@@ -13,10 +13,14 @@
     "browser": "pnpm --filter \"@futils/browser\"",
     "core": "pnpm --filter \"@futils/core\"",
     "config:eslint": "pnpm --filter \"eslint-config-futils\"",
+    "config:shared": "pnpm --filter \"@futils/shared\"",
     "__BUILD__": "building and testing packages",
     "test": "vitest",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives ",
     "clean": "turbo run clean && rimraf node_modules",
-    "build": "turbo run build"
+    "tscheck": "turbo run tscheck",
+    "build": "turbo run build",
+    "build:quick": "turbo run build:quick"
   },
   "dependencies": {
     "@babel/cli": "^7.22.15",

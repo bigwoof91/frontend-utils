@@ -5,7 +5,12 @@
         "dependsOn": ["^build"],
         "outputs": ["dist/**"]
       },
+      "build:quick": {
+        "dependsOn": ["^build:quick"],
+        "outputs": ["dist/**"]
+      },
       "lint": {},
+      "tscheck": {},
       "test": {
         "outputs": []
       },

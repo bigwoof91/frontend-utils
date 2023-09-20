@@ -10,7 +10,9 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup"
+    "build": "tsup --dts",
+    "build:quick": "tsup",
+    "tscheck": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",

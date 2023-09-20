@@ -1,5 +1,6 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
+  ignorePatterns: ['node_modules/', 'dist'],
   env: {
     node: true,
     browser: true,
@@ -42,11 +43,8 @@ module.exports = {
       },
     },
     {
-      "files": ["**/__tests__/*.{j,t}s?(x)", "**/*.spec.{j,t}s?(x)"],
-      "extends": [
-        "plugin:testing-library/react",
-        "plugin:vitest/recommended"
-      ]
+      files: ['**/__tests__/*.{j,t}s?(x)', '**/*.spec.{j,t}s?(x)'],
+      extends: ['plugin:testing-library/react', 'plugin:vitest/recommended'],
     },
     {
       files: ['*.js'],

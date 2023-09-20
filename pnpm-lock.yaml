@@ -133,7 +133,14 @@ importers:
         specifier: ^5.0.1
         version: 5.0.1
 
-  config/futils-shared: {}
+  config/futils-shared:
+    devDependencies:
+      '@futils/tsconfig':
+        specifier: workspace:^
+        version: link:../futils-tsconfig
+      rimraf:
+        specifier: ^5.0.1
+        version: 5.0.1
 
   config/futils-tsconfig: {}
 
