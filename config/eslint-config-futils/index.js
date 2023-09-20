@@ -1,8 +1,8 @@
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   env: {
     node: true,
     browser: true,
-    jest: true,
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -31,7 +31,6 @@ module.exports = {
     'unicorn',
     'simple-import-sort',
     'import',
-    'jest',
     '@typescript-eslint',
   ],
   overrides: [
@@ -43,8 +42,11 @@ module.exports = {
       },
     },
     {
-      files: ['*.test.ts', '*.test.tsx'],
-      extends: ['plugin:testing-library/react', 'plugin:jest/recommended'],
+      "files": ["**/__tests__/*.{j,t}s?(x)", "**/*.spec.{j,t}s?(x)"],
+      "extends": [
+        "plugin:testing-library/react",
+        "plugin:vitest/recommended"
+      ]
     },
     {
       files: ['*.js'],

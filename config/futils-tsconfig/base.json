@@ -21,7 +21,8 @@
       "noUnusedLocals": false,
       "noUnusedParameters": false,
       "preserveWatchOutput": true,
-      "verbatimModuleSyntax": true
+      "verbatimModuleSyntax": true,
+      "types": ["vitest/globals"]
     },
     "exclude": ["node_modules"]
 }

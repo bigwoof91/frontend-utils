@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 import { vi } from 'vitest';
 import createFetchMock from 'vitest-fetch-mock';
