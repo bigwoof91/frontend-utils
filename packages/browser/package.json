@@ -1,7 +1,7 @@
 {
   "name": "@futil/browser",
   "version": "0.0.1",
-  "description": "Browser-related utilities",
+  "description": "Frontend utilities for the web browser",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
