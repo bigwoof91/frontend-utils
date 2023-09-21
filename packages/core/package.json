@@ -17,14 +17,14 @@
     "build": "pnpm build:js && pnpm build:types",
     "build:js": "pnpm clean && pnpm update-dependencies && pnpm generate-bundle && pnpm compile",
     "build:types": "./tools/build-types.sh",
-    "clean": "./tools/clean-packages.sh && rimraf node_modules .turbo",
+    "clean": "./tools/clean-packages.sh && rimraf node_modules dist .turbo",
     "compile": "babel ./src/*.ts --out-dir ./dist --env-name 'release' --extensions '.ts' --config-file './babel.config.js' && pnpm minify-bundle",
     "update-dependencies": "node ./tools/update-dependencies.js",
     "generate-bundle": "node ./tools/generate.js",
     "minify-bundle": "node ./tools/minify"
   },
   "dependencies": {
-    "@futil/browser": "workspace:^"
+    "@futil/browser": "^0.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.15",

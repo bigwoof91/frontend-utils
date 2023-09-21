@@ -170,7 +170,7 @@ importers:
   packages/core:
     dependencies:
       '@futil/browser':
-        specifier: workspace:^
+        specifier: ^0.0.1
         version: link:../browser
     devDependencies:
       '@babel/cli':

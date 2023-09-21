@@ -12,7 +12,8 @@
   "scripts": {
     "build": "tsup --dts",
     "build:quick": "tsup",
-    "tscheck": "tsc --noEmit"
+    "tscheck": "tsc --noEmit",
+    "clean": "rimraf node_modules dist .turbo"
   },
   "keywords": [],
   "author": "Michael Wolf <bigwoof91@gmail.com>",
