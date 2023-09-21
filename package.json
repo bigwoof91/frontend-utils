@@ -17,6 +17,7 @@
     "___________QUALITY___________": "code quality and maintenance",
     "lint": "eslint \"{,!(node_modules)/**/}*.{ts,tsx,md,mdx,yml}\" --report-unused-disable-directives ",
     "tscheck": "turbo run tscheck",
+    "quality": "pnpm lint && pnpm test --runInBand",
     "___________BUILD___________": "building/bundling scripts",
     "test": "vitest",
     "test:watch": "vitest --watch",
@@ -26,7 +27,6 @@
     "___________RELEASE___________": "release scripts",
     "changeset": "changeset",
     "version:stable": "changeset version",
-    "prerelease": "pnpm lint && pnpm test --runInBand",
     "release:stable": "pnpm build && changeset publish"
   },
   "config": {
@@ -54,6 +54,7 @@
     "husky": "^8.0.3",
     "jsdom": "^22.1.0",
     "lint-staged": "^14.0.1",
+    "outdent": "^0.8.0",
     "prettier": "^3.0.3",
     "rimraf": "^5.0.1",
     "terser": "^5.19.4",

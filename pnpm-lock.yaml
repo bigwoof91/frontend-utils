@@ -65,6 +65,9 @@ importers:
       lint-staged:
         specifier: ^14.0.1
         version: 14.0.1
+      outdent:
+        specifier: ^0.8.0
+        version: 0.8.0
       prettier:
         specifier: ^3.0.3
         version: 3.0.3
@@ -6890,6 +6893,10 @@ packages:
 
   /outdent@0.5.0:
     resolution: {integrity: sha512-/jHxFIzoMXdqPzTaCpFzAAWhpkSjZPF4Vsn6jAfNpmbH/ymsmd7Qc6VE9BGn0L6YMj6uwpQLxCECpus4ukKS9Q==}
+    dev: false
+
+  /outdent@0.8.0:
+    resolution: {integrity: sha512-KiOAIsdpUTcAXuykya5fnVVT+/5uS0Q1mrkRHcF89tpieSmY33O/tmc54CqwA+bfhbtEfZUNLHaPUiB9X3jt1A==}
     dev: false
 
   /p-filter@2.1.0:

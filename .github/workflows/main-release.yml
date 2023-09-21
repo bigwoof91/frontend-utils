@@ -1,26 +1,18 @@
-name: Merge to main
+name: Release
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Quality"]
+    branches: [main]
+    paths:
+      - ".changeset/**"
+      - "packages/**"
+    types: 
+      - completed
 
 jobs:
-  prerelease-tests:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout branch
-        uses: actions/checkout@v3
-
-      - name: Install
-        uses: ./.github/composite-actions/install
-
-      - name: Run prerelease tests
-        run: pnpm prerelease
-
   version-or-publish-packages:
     runs-on: ubuntu-latest
-    needs: prerelease-tests
     steps:
       - name: Checkout branch
         uses: actions/checkout@v3
@@ -33,8 +25,8 @@ jobs:
         with:
           version: pnpm version:stable
           publish: pnpm release:stable
-          commit: 'chore(release): publish packages'
-          title: 'chore(release): publish packages'
+          commit: '🤖 ci(changesets): version packages'
+          title: '🤖 ci(changesets): version packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
