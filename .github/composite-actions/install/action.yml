@@ -2,7 +2,7 @@ name: 'Install'
 description: 'Sets up Node.js and runs install'
 
 inputs:
-  command:
+  install-command:
     description: Unfreeze the pnpm lockfile
     # or 'pnpm install --no-frozen-lockfile'
     default: pnpm install
@@ -30,4 +30,4 @@ runs:
 
     - name: Install dependencies
       shell: bash
-      run: ${{ inputs.command }}
+      run: ${{ inputs.install-command }}

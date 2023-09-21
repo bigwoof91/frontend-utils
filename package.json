@@ -26,7 +26,7 @@
     "build:quick": "turbo run build:quick",
     "___________RELEASE___________": "release scripts",
     "changeset": "changeset",
-    "version:stable": "changeset version",
+    "version:stable": "changeset version && pnpm install --no-frozen-lockfile",
     "release:stable": "pnpm build && changeset publish"
   },
   "config": {

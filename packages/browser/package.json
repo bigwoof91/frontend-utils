@@ -6,9 +6,6 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "status": "production",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "tsup --dts",
     "build:quick": "tsup",
