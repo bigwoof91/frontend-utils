@@ -10,7 +10,7 @@ const getPackageJsonOutput = async () => {
   logger.blue(CORE_PACKAGE_JSON_PATH);
   const { coreDependencies } = await getWorkspacesInfo({ hasProdStatus: true });
   const pkgJson = require(CORE_PACKAGE_JSON_PATH);
-  console.log(coreDependencies);
+
   pkgJson.dependencies = coreDependencies;
   return pkgJson;
 };

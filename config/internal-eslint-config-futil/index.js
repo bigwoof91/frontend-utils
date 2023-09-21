@@ -45,7 +45,7 @@ module.exports = {
     {
       files: ['*.md', '*.mdx'],
       extends: ['plugin:mdx/recommended'],
-      rules: { 'unicorn/filename-case': 'off' },
+      rules: { 'unicorn/filename-case': ['off'] },
     },
     {
       files: ['*.yml', '*.yaml'],

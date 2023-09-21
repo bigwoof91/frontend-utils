@@ -17,8 +17,6 @@ const PACKAGE_STATUS_CONFIG = {
   [PRODUCTION]: true,
   // under development, not ready for release
   [DEVELOPMENT]: false,
-  // under experimentation, not ready for release
-  [EXPERIMENTAL]: false,
 };
 
 global.__basedir = ROOT_PATH;
