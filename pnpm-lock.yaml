@@ -178,7 +178,7 @@ importers:
   packages/core:
     dependencies:
       '@futil/browser':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../browser
     devDependencies:
       '@babel/cli':
