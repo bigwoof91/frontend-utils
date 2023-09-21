@@ -1,5 +1,17 @@
 # @futil/core
 
+## 0.0.2
+
+### Patch Changes
+
+- [#7](https://github.com/bigwoof91/frontend-utils/pull/7)
+  [`f4dd323`](https://github.com/bigwoof91/frontend-utils/commit/f4dd3230831beaa5c10714b56c06e2081c3af9e2)
+  Thanks [@bigwoof91](https://github.com/bigwoof91)! - ci publishg
+
+- Updated dependencies
+  [[`f4dd323`](https://github.com/bigwoof91/frontend-utils/commit/f4dd3230831beaa5c10714b56c06e2081c3af9e2)]:
+  - @futil/browser@0.0.2
+
 ## 0.0.1
 
 ### Patch Changes
