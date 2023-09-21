@@ -57,12 +57,12 @@
     "outdent": "^0.8.0",
     "prettier": "^3.0.3",
     "rimraf": "^5.0.1",
-    "terser": "^5.19.4",
+    "terser": "^5.20.0",
     "tsup": "^7.2.0",
     "turbo": "latest",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
-    "vitest": "^0.34.4",
+    "vitest": "^0.34.5",
     "vitest-fetch-mock": "^0.2.2"
   },
   "devDependencies": {
