@@ -1,11 +1,10 @@
-/* eslint-disable no-unused-vars */
 const generateGitIgnore = require('./utils/generate-gitignore');
 const generateIndex = require('./utils/generate-index');
 const generatePkgJson = require('./utils/generate-pkg-json');
 const generateUnbarreledExports = require('./utils/generate-unbarreled-exports');
 
 /**
- * @function generate generate core bundle from real system package workspaces
+ * @description script to generate generate core bundle from `@futil` package workspaces
  */
 (async function generate() {
   /*

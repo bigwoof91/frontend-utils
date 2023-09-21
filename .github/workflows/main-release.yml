@@ -1,0 +1,32 @@
+name: Release
+
+on:
+  workflow_run:
+    workflows: ["Quality"]
+    branches: [main]
+    paths:
+      - ".changeset/**"
+      - "packages/**"
+    types: 
+      - completed
+
+jobs:
+  version-or-publish-packages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+
+      - name: Install
+        uses: ./.github/composite-actions/install
+
+      - name: Create PR or Publish Package
+        uses: changesets/action@v1
+        with:
+          version: pnpm version:stable
+          publish: pnpm release:stable
+          commit: '🤖 ci(changesets): version packages'
+          title: '🤖 ci(changesets): version packages'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

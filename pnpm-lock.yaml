@@ -14,6 +14,9 @@ importers:
       '@babel/core':
         specifier: ^7.22.20
         version: 7.22.20
+      '@changesets/changelog-github':
+        specifier: ^0.4.8
+        version: 0.4.8
       '@changesets/cli':
         specifier: ^2.26.2
         version: 2.26.2
@@ -23,9 +26,9 @@ importers:
       '@commitlint/cz-commitlint':
         specifier: ^17.7.1
         version: 17.7.1(commitizen@4.3.0)(inquirer@8.2.6)
-      '@futils/tsconfig':
+      '@internal/tsconfig':
         specifier: workspace:^
-        version: link:config/futils-tsconfig
+        version: link:config/internal-tsconfig
       '@testing-library/jest-dom':
         specifier: ^6.1.3
         version: 6.1.3(vitest@0.34.4)
@@ -44,9 +47,9 @@ importers:
       eslint:
         specifier: ^8.49.0
         version: 8.49.0
-      eslint-config-futils:
+      eslint-config-futil:
         specifier: workspace:^
-        version: link:config/eslint-config-futils
+        version: link:config/internal-eslint-config-futil
       execa:
         specifier: ^8.0.1
         version: 8.0.1
@@ -62,6 +65,9 @@ importers:
       lint-staged:
         specifier: ^14.0.1
         version: 14.0.1
+      outdent:
+        specifier: ^0.8.0
+        version: 0.8.0
       prettier:
         specifier: ^3.0.3
         version: 3.0.3
@@ -90,7 +96,7 @@ importers:
         specifier: ^0.2.2
         version: 0.2.2(vitest@0.34.4)
 
-  config/eslint-config-futils:
+  config/internal-eslint-config-futil:
     dependencies:
       '@testing-library/dom':
         specifier: ^9.3.3
@@ -137,6 +143,9 @@ importers:
       eslint-plugin-vitest:
         specifier: ^0.3.1
         version: 0.3.1(@typescript-eslint/eslint-plugin@6.7.2)(eslint@8.49.0)(vitest@0.34.4)
+      eslint-plugin-yml:
+        specifier: ^1.9.0
+        version: 1.9.0(eslint@8.49.0)
       prettier:
         specifier: ^3.0.3
         version: 3.0.3
@@ -151,33 +160,24 @@ importers:
         specifier: ^5.0.1
         version: 5.0.1
 
-  config/futils-shared:
-    devDependencies:
-      '@futils/tsconfig':
-        specifier: workspace:^
-        version: link:../futils-tsconfig
-      rimraf:
-        specifier: ^5.0.1
-        version: 5.0.1
-
-  config/futils-tsconfig: {}
+  config/internal-tsconfig: {}
 
   packages/browser:
     dependencies:
-      '@futils/tsconfig':
-        specifier: workspace:^
-        version: link:../../config/futils-tsconfig
       tsup:
         specifier: ^7.2.0
         version: 7.2.0(ts-node@10.9.1)(typescript@5.2.2)
     devDependencies:
+      '@internal/tsconfig':
+        specifier: workspace:^
+        version: link:../../config/internal-tsconfig
       rimraf:
         specifier: ^5.0.1
         version: 5.0.1
 
   packages/core:
     dependencies:
-      '@futils/browser':
+      '@futil/browser':
         specifier: ^0.0.0
         version: link:../browser
     devDependencies:
@@ -202,6 +202,9 @@ importers:
       '@babel/register':
         specifier: ^7.22.15
         version: 7.22.15(@babel/core@7.22.20)
+      '@internal/tsconfig':
+        specifier: workspace:^
+        version: link:../../config/internal-tsconfig
       babel-plugin-macros:
         specifier: ^3.1.0
         version: 3.1.0
@@ -1562,6 +1565,16 @@ packages:
       '@changesets/types': 5.2.1
     dev: false
 
+  /@changesets/changelog-github@0.4.8:
+    resolution: {integrity: sha512-jR1DHibkMAb5v/8ym77E4AMNWZKB5NPzw5a5Wtqm1JepAuIF+hrKp2u04NKM14oBZhHglkCfrla9uq8ORnK/dw==}
+    dependencies:
+      '@changesets/get-github-info': 0.5.2
+      '@changesets/types': 5.2.1
+      dotenv: 8.6.0
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
   /@changesets/cli@2.26.2:
     resolution: {integrity: sha512-dnWrJTmRR8bCHikJHl9b9HW3gXACCehz4OasrXpMp7sx97ECuBGGNjJhjPhdZNCvMy9mn4BWdplI323IbqsRig==}
     hasBin: true
@@ -1627,6 +1640,15 @@ packages:
       chalk: 2.4.2
       fs-extra: 7.0.1
       semver: 7.5.4
+    dev: false
+
+  /@changesets/get-github-info@0.5.2:
+    resolution: {integrity: sha512-JppheLu7S114aEs157fOZDjFqUDpm7eHdq5E8SSR0gUBTEK0cNSHsrSR5a66xs0z3RWuo46QvA3vawp8BxDHvg==}
+    dependencies:
+      dataloader: 1.4.0
+      node-fetch: 2.7.0
+    transitivePeerDependencies:
+      - encoding
     dev: false
 
   /@changesets/get-release-plan@3.0.17:
@@ -2587,7 +2609,7 @@ packages:
   /@types/concat-stream@2.0.0:
     resolution: {integrity: sha512-t3YCerNM7NTVjLuICZo5gYAXYoDvpuuTceCcFQWcDQz26kxUR5uIWolxbIR5jRNIXpMqhOpW/b8imCR1LEmuJw==}
     dependencies:
-      '@types/node': 18.17.18
+      '@types/node': 20.4.7
     dev: false
 
   /@types/debug@4.1.8:
@@ -3809,6 +3831,10 @@ packages:
       whatwg-url: 12.0.1
     dev: false
 
+  /dataloader@1.4.0:
+    resolution: {integrity: sha512-68s5jYdlvasItOJnCuI2Q9s4q98g0pCyL3HrcKJu8KNugUl8ahgmZYg38ysLTgQjjXX3H8CJLkAvWrclWfcalw==}
+    dev: false
+
   /debug@3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
     peerDependencies:
@@ -4014,6 +4040,11 @@ packages:
   /dotenv@16.0.3:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
     engines: {node: '>=12'}
+    dev: false
+
+  /dotenv@8.6.0:
+    resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
+    engines: {node: '>=10'}
     dev: false
 
   /eastasianwidth@0.2.0:
@@ -4480,6 +4511,21 @@ packages:
       eslint: 8.49.0
       typescript: 5.2.2
       vitest: 0.34.4(jsdom@22.1.0)(terser@5.19.4)
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /eslint-plugin-yml@1.9.0(eslint@8.49.0):
+    resolution: {integrity: sha512-ayuC57WyVQ5+QZ02y62GiB//5+zsiyzUGxUX/mrhLni+jfsKA4KoITjkbR65iUdjjhWpyTJHPcAIFLKQIOwgsw==}
+    engines: {node: ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: '>=6.0.0'
+    dependencies:
+      debug: 4.3.4
+      eslint: 8.49.0
+      lodash: 4.17.21
+      natural-compare: 1.4.0
+      yaml-eslint-parser: 1.2.2
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -6849,6 +6895,10 @@ packages:
     resolution: {integrity: sha512-/jHxFIzoMXdqPzTaCpFzAAWhpkSjZPF4Vsn6jAfNpmbH/ymsmd7Qc6VE9BGn0L6YMj6uwpQLxCECpus4ukKS9Q==}
     dev: false
 
+  /outdent@0.8.0:
+    resolution: {integrity: sha512-KiOAIsdpUTcAXuykya5fnVVT+/5uS0Q1mrkRHcF89tpieSmY33O/tmc54CqwA+bfhbtEfZUNLHaPUiB9X3jt1A==}
+    dev: false
+
   /p-filter@2.1.0:
     resolution: {integrity: sha512-ZBxxZ5sL2HghephhpGAQdoskxplTwr7ICaehZwLIlfL6acuVgZPm8yBNuRAFBGEqtD/hmUeq9eqLg2ys9Xr/yw==}
     engines: {node: '>=8'}
@@ -8984,6 +9034,15 @@ packages:
 
   /yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
+    dev: false
+
+  /yaml-eslint-parser@1.2.2:
+    resolution: {integrity: sha512-pEwzfsKbTrB8G3xc/sN7aw1v6A6c/pKxLAkjclnAyo5g5qOh6eL9WGu0o3cSDQZKrTNk4KL4lQSwZW+nBkANEg==}
+    engines: {node: ^14.17.0 || >=16.0.0}
+    dependencies:
+      eslint-visitor-keys: 3.4.3
+      lodash: 4.17.21
+      yaml: 2.3.2
     dev: false
 
   /yaml@1.10.2:

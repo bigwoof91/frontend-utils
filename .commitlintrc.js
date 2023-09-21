@@ -30,8 +30,9 @@ module.exports = {
         '✨ feat',
         '🐛 fix',
         '🦄 refactor',
-        '🧪 test',
         '📜 docs',
+        '🧪 test',
+        '🤖 ci',
         '🏎️ perf',
         '🧰 tooling',
         '🧹 chore',
@@ -69,13 +70,17 @@ module.exports = {
               'A code change that neither fixes a bug nor adds a feature',
             title: 'Code Refactoring',
           },
+          '📜 docs': {
+            description: 'Documentation only changes',
+            title: 'Documentation',
+          },
           '🧪 test': {
             description: 'Adding missing tests or correcting existing tests',
             title: 'Tests',
           },
-          '📜 docs': {
-            description: 'Documentation only changes',
-            title: 'Documentation',
+          '🤖 ci': {
+            description: '(DO NOT USE) Code comitted by CI',
+            title: 'CI',
           },
           '🏎️ perf': {
             description: 'A performance improvement',

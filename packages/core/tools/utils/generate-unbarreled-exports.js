@@ -16,8 +16,8 @@ const generateUnbarreledExports = async () => {
       getUnbarreledFileFullPath(purePkgNames[i]),
       `export * from '${pkg}';\n`,
       {
-        successMessage: `[@futils/core/${pkg}] Generated unbarreled exports.`,
-        errorMessage: `[@futils/core/${pkg}] Failed to generate exports.`,
+        successMessage: `[@futil/core/${pkg}] Generated unbarreled exports.`,
+        errorMessage: `[@futil/core/${pkg}] Failed to generate exports.`,
       }
     );
   });

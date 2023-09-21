@@ -8,7 +8,6 @@ const BUNDLE_OUTPUT_DIR = 'dist';
 
 const ROOT_PATH = join(__dirname, '../..');
 const PACKAGES_PATH = join(ROOT_PATH, 'packages');
-const CORE_PATH = join(PACKAGES_PATH, 'core');
 
 const PRODUCTION = 'production';
 const DEVELOPMENT = 'development';
@@ -18,8 +17,6 @@ const PACKAGE_STATUS_CONFIG = {
   [PRODUCTION]: true,
   // under development, not ready for release
   [DEVELOPMENT]: false,
-  // under experimentation, not ready for release
-  [EXPERIMENTAL]: false,
 };
 
 global.__basedir = ROOT_PATH;
@@ -34,5 +31,4 @@ module.exports = {
   DEVELOPMENT,
   EXPERIMENTAL,
   ROOT_PATH,
-  CORE_PATH,
 };

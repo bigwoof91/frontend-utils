@@ -1,14 +1,13 @@
 const path = require('path');
 const { PACKAGE_STATUS_CONFIG, PACKAGES_PATH } = require('./env');
 
-const getPurePkgName = (pkgName) => pkgName.replace('@futils/', '');
+const getPurePkgName = (pkgName) => pkgName.replace('@futil/', '');
+const isPublicPackage = (path) => path.includes('/frontend-utils/packages');
+const isNotMainRepo = (name) => name !== 'futil';
 
 const parseJsonList = (data) =>
   JSON.parse(data)
-    .filter(
-      ({ name, path }) =>
-        name !== 'futils' && path.includes('/frontend-utils/packages')
-    )
+    .filter(({ name, path }) => isNotMainRepo(name) && isPublicPackage(path))
     .reduce((a, b) => ({ ...a, [b.name]: b }), {});
 
 const getWorkspaceData = (data, pureName) => ({
@@ -37,10 +36,11 @@ const getWorkspacesInfo = async (config = DEFAULT_CONFIG) => {
 
     const coreDependencies = {};
     const purePkgNames = [];
-    const pkgCache = [];
-    const workspaceNames = Object.keys(data)
-      .filter((name) => (config.withCore ? true : !name.includes('core')))
+    const pkgNames = Object.keys(data)
       .filter((name) => {
+        if (!config.withCore && name.includes('core')) {
+          return false;
+        }
         const pureName = getPurePkgName(name);
         const { pkgJson } = getWorkspaceData(data[name], pureName);
         const isProductionReady = PACKAGE_STATUS_CONFIG[pkgJson.status];
@@ -53,7 +53,7 @@ const getWorkspacesInfo = async (config = DEFAULT_CONFIG) => {
       })
       .sort();
 
-    const pkgList = workspaceNames.map((name) => {
+    const pkgList = pkgNames.map((name) => {
       const pureName = getPurePkgName(name);
 
       const { workspaceInfo, pkgJson } = getWorkspaceData(data[name], pureName);
@@ -65,7 +65,7 @@ const getWorkspacesInfo = async (config = DEFAULT_CONFIG) => {
         coreDependencies[name] = `^${pkgJson.version}`;
       }
 
-      const pkg = {
+      return {
         name,
         pureName,
         relativeLocationFromCore: path.resolve(
@@ -75,24 +75,12 @@ const getWorkspacesInfo = async (config = DEFAULT_CONFIG) => {
         version: pkgJson.version,
         ...workspaceInfo,
       };
-
-      // push to pkgCache
-      pkgCache.push({
-        name,
-        version: pkgJson.version,
-        private: false,
-        location: path.resolve(__dirname, '../../packages', pureName),
-      });
-
-      return pkg;
     });
 
     resolve({
-      pkgCache,
       pkgList,
-      pkgNames: workspaceNames,
-      purePkgNames: purePkgNames,
-      data,
+      pkgNames,
+      purePkgNames,
       coreDependencies,
     });
   });

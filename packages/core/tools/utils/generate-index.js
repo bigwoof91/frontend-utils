@@ -24,8 +24,8 @@ async function generateIndex() {
   const indexOutput = await getIndexOutput();
 
   return writeToFile(CORE_INDEX_PATH, indexOutput, {
-    successMessage: '[@futils/core] Generated index exports.',
-    errorMessage: '[@futils/core] Failed to generate index exports.',
+    successMessage: '[@futil/core] Generated index exports.',
+    errorMessage: '[@futil/core] Failed to generate index exports.',
   });
 }
 

@@ -1,1 +1,1 @@
-export * from '@futils/browser';
+export * from '@futil/browser';

@@ -1,5 +1,5 @@
 {
-  "name": "@futils/browser",
+  "name": "@futil/browser",
   "version": "0.0.0",
   "description": "Browser-related utilities",
   "main": "dist/index.js",
@@ -15,13 +15,13 @@
     "tscheck": "tsc --noEmit"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Michael Wolf <bigwoof91@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "@futils/tsconfig": "workspace:^",
     "tsup": "^7.2.0"
   },
   "devDependencies": {
+    "@internal/tsconfig": "workspace:^",
     "rimraf": "^5.0.1"
   }
 }
