@@ -25,6 +25,7 @@ module.exports = {
     'plugin:jest-dom/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
+    'plugin:mdx/recommended',
   ],
   plugins: [
     'react',
