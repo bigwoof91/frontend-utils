@@ -37,6 +37,7 @@ jobs:
           publish: pnpm release:stable
           commit: "🤖 ci(changesets): version packages"
           title: "🤖 ci(changesets): version packages"
+          setupGitUser: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

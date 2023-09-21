@@ -34,7 +34,7 @@
     "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
     "@babel/register": "^7.22.15",
-    "@internal/tsconfig": "workspace:^",
+    "@internal/tsconfig": "workspace:*",
     "babel-plugin-macros": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
