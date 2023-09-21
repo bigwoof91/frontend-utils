@@ -1,0 +1,21 @@
+name: Tests
+
+on:
+   pull_request:
+    # if a pull request does not include changes to packages
+    paths-ignore:
+      - 'packages/**'
+
+jobs:
+  # force the "Run Tests" status check to pass for the PR
+  tests:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No test required"'
+  # force the "Diff compressed package sizes" status check to pass for the PR
+  package-size:
+    name: Diff compressed package sizes
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No pkg diff required"'
