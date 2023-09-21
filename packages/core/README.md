@@ -1,7 +1,7 @@
-<h1 align="center">@futils/core</h1>
-<p align="center">One bundle containing every package within `futils`.</p>
+<h1 align="center">@futil/core</h1>
+<p align="center">One bundle containing every package within `futil`.</p>
 <p align="center">
-<a href="https://www.npmjs.com/package/@futils/core"><img src="https://badgen.net/npm/v/@futils/core?label=&icon=npm&color=blue" alt="npm version" height="18"/></a>
+<a href="https://www.npmjs.com/package/@futil/core"><img src="https://badgen.net/npm/v/@futil/core?label=&icon=npm&color=blue" alt="npm version" height="18"/></a>
 </p>
 
 ## Installation
@@ -10,11 +10,11 @@
 
 ```bash
 # npm
-$ npm i --save @futils/core
+$ npm i --save @futil/core
 
 # yarn
-$ yarn add @futils/core
+$ yarn add @futil/core
 
 # pnpm
-$ pnpm add @futils/core
+$ pnpm add @futil/core
 ```

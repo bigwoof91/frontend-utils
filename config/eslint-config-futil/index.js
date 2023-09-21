@@ -25,7 +25,6 @@ module.exports = {
     'plugin:jest-dom/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
-    'plugin:mdx/recommended',
   ],
   plugins: [
     'react',
@@ -44,17 +43,20 @@ module.exports = {
       },
     },
     {
+      files: ['*.md', '*.mdx'],
+      extends: ['plugin:mdx/recommended'],
+      rules: { 'unicorn/filename-case': 'off' },
+    },
+    {
+      files: ['*.yml', '*.yaml'],
+      extends: ['plugin:yml/recommended'],
+    },
+    {
       files: ['**/__tests__/*.{j,t}s?(x)', '**/*.spec.{j,t}s?(x)'],
       extends: ['plugin:testing-library/react', 'plugin:vitest/recommended'],
     },
     {
-      files: ['*.js'],
-      rules: {
-        '@typescript-eslint/no-var-requires': 'off',
-      },
-    },
-    {
-      files: ['*.cjs'],
+      files: ['*.js', '*.cjs'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
       },
@@ -119,7 +121,7 @@ module.exports = {
           // react and related packages
           ['^react', '^@?\\w'],
           // @em workspace/alias imports
-          ['^(@futils)(/.*|$)'],
+          ['^(@futil)(/.*|$)'],
           // EXAMPLE relative path alias imports
           // ['^(@|@<LIB_NAME>|@<LIB_2_name>)(/.*|$)'],
           // Side effect imports.

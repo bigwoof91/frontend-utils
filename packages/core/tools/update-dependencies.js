@@ -21,7 +21,7 @@ const getPackageJsonOutput = async () => {
 
   await writeToFile(CORE_PACKAGE_JSON_PATH, packageJsonOutput, {
     formatJson: true,
-    successMessage: '[@futils/core] Updated core package deps.',
-    errorMessage: '[@futils/core] Failed to update core package deps.',
+    successMessage: '[@futil/core] Updated core package deps.',
+    errorMessage: '[@futil/core] Failed to update core package deps.',
   });
 })();

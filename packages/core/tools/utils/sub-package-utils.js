@@ -1,5 +1,5 @@
 const { join } = require('path');
-const { env } = require('../../../../tools/utils');
+const env = require('./constants');
 
 const getUnbarreledFilePath = (pkgName) => `src/${pkgName}.ts`;
 

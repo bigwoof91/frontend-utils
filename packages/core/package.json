@@ -1,8 +1,8 @@
 {
-  "name": "@futils/core",
-  "version": "0.0.64",
+  "name": "@futil/core",
+  "version": "0.0.0",
   "status": "production",
-  "description": "Contains all the packages from Real System.",
+  "description": "Contains all the packages from @futil",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bigwoof91/real-system.git"
@@ -24,7 +24,7 @@
     "minify-bundle": "node ./tools/minify"
   },
   "dependencies": {
-    "@futils/browser": "^0.0.0"
+    "@futil/browser": "^0.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.15",

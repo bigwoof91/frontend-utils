@@ -8,7 +8,6 @@ const BUNDLE_OUTPUT_DIR = 'dist';
 
 const ROOT_PATH = join(__dirname, '../..');
 const PACKAGES_PATH = join(ROOT_PATH, 'packages');
-const CORE_PATH = join(PACKAGES_PATH, 'core');
 
 const PRODUCTION = 'production';
 const DEVELOPMENT = 'development';
@@ -34,5 +33,4 @@ module.exports = {
   DEVELOPMENT,
   EXPERIMENTAL,
   ROOT_PATH,
-  CORE_PATH,
 };

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const fs = require('fs');
 const {
   logger,
@@ -11,7 +10,7 @@ const {
  */
 const writePkgJson = async (pkg) => {
   const pkgJson = {
-    name: `@futils/${pkg}`,
+    name: `@futil/${pkg}`,
     version: '0.0.0',
     private: true,
     sideEffects: false,
@@ -25,8 +24,8 @@ const writePkgJson = async (pkg) => {
     fs.mkdirSync(dir);
   }
   return await writeToFile(`${dir}/package.json`, pkgJson, {
-    successMessage: `[@futils/core/${pkg}]: Generated "package.json".`,
-    errorMessage: `[@futils/core/${pkg}]: Failed to generate "package.json".`,
+    successMessage: `[@futil/core/${pkg}]: Generated "package.json".`,
+    errorMessage: `[@futil/core/${pkg}]: Failed to generate "package.json".`,
     formatJson: true,
   });
 };

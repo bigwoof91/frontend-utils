@@ -10,13 +10,13 @@ const generateGitIgnore = async () => {
   const ignoreList = purePkgNames.map((name) => `/${name}`);
 
   const content = `# Automatically generated from "pnpm generate-packages"
-/dist
+dist
 ${ignoreList.join('\n')}`;
 
   logger.gray('\nGenerating .gitignore');
   return writeToFile(join(__dirname, '../../.gitignore'), content, {
-    successMessage: '[@futils/core] Generated ".gitignore".\n',
-    errorMessage: '[@futils/core] Failed to generate ".gitignore".\n',
+    successMessage: '[@futil/core] Generated ".gitignore".\n',
+    errorMessage: '[@futil/core] Failed to generate ".gitignore".\n',
   });
 };
 

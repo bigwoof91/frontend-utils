@@ -1,13 +1,13 @@
 const path = require('path');
 const { PACKAGE_STATUS_CONFIG, PACKAGES_PATH } = require('./env');
 
-const getPurePkgName = (pkgName) => pkgName.replace('@futils/', '');
+const getPurePkgName = (pkgName) => pkgName.replace('@futil/', '');
 
 const parseJsonList = (data) =>
   JSON.parse(data)
     .filter(
       ({ name, path }) =>
-        name !== 'futils' && path.includes('/frontend-utils/packages')
+        name !== 'futil' && path.includes('/frontend-utils/packages')
     )
     .reduce((a, b) => ({ ...a, [b.name]: b }), {});
 
