@@ -27,6 +27,8 @@ jobs:
 
       - name: Install
         uses: ./.github/composite-actions/install
+        with:
+          command: pnpm install --no-frozen-lockfile
 
       - name: Create PR or Publish Package
         uses: changesets/action@v1
