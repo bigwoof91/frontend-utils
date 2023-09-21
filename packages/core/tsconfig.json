@@ -1,6 +1,6 @@
 {
-  "extends": "../../tsconfig.json",
-  "include": ["./src/**/*"],
+  "extends": "@internal/tsconfig/base.json",
+  "include": ["src"],
   "compilerOptions": {
     "module": "commonjs",
     "outDir": "./dist",

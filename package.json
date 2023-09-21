@@ -14,20 +14,20 @@
     "browser": "pnpm --filter \"@futil/browser\"",
     "core": "pnpm --filter \"@futil/core\"",
     "config:eslint": "pnpm --filter \"eslint-config-futil\"",
-    "config:shared": "pnpm --filter \"@futil/shared\"",
     "___________QUALITY___________": "code quality and maintenance",
     "lint": "eslint \"{,!(node_modules)/**/}*.{ts,tsx,md,mdx,yml}\" --report-unused-disable-directives ",
     "tscheck": "turbo run tscheck",
     "___________BUILD___________": "building/bundling scripts",
     "test": "vitest",
+    "test:watch": "vitest --watch",
     "clean": "turbo run clean && rimraf node_modules",
     "build": "turbo run build",
     "build:quick": "turbo run build:quick",
     "___________RELEASE___________": "release scripts",
     "changeset": "changeset",
-    "version:stable": "yarn changeset version && yarn install --mode=update-lockfile",
-    "prerelease": "yarn lint && yarn test --runInBand",
-    "release:stable": "yarn build && yarn changeset publish"
+    "version:stable": "changeset version",
+    "prerelease": "pnpm lint && pnpm test --runInBand",
+    "release:stable": "pnpm build && changeset publish"
   },
   "config": {
     "commitizen": {
@@ -41,7 +41,7 @@
     "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/cz-commitlint": "^17.7.1",
-    "@futil/tsconfig": "workspace:^",
+    "@internal/tsconfig": "workspace:^",
     "@testing-library/jest-dom": "^6.1.3",
     "@testing-library/react": "^14.0.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
