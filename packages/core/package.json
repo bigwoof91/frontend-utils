@@ -1,6 +1,6 @@
 {
   "name": "@futil/core",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "status": "production",
   "description": "Contains all the packages from @futil",
   "repository": {
@@ -24,7 +24,7 @@
     "minify-bundle": "node ./tools/minify"
   },
   "dependencies": {
-    "@futil/browser": "^0.0.0"
+    "@futil/browser": "^0.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.15",
