@@ -1,8 +1,8 @@
 module.exports = {
   parserPreset: {
     parserOpts: {
-      headerPattern:
-        /^(?<type>.*\s\w*)(?:\((?<scope>.*)\))?!?:\s(?<subject>(?:(?!#).)*(?:(?!\s).))$/,
+      // headerPattern:
+      //   /^(?<type>.*\s\w*)(?:\((?<scope>.*)\))?!?:\s(?<subject>(?:(?!#).)*(?:(?!\s).))$/,
       headerCorrespondence: ['type', 'scope', 'subject'],
     },
   },
@@ -27,16 +27,16 @@ module.exports = {
       2,
       'always',
       [
-        '✨ feat',
-        '🐛 fix',
-        '🦄 refactor',
-        '📜 docs',
-        '🧪 test',
-        '🤖 ci',
-        '🏎️ perf',
-        '🧰 tooling',
-        '🧹 chore',
-        '🚧 wip',
+        'feat',
+        'fix',
+        'refactor',
+        'docs',
+        'test',
+        'ci',
+        'perf',
+        'tooling',
+        'chore',
+        'wip',
       ],
     ],
   },
@@ -57,45 +57,45 @@ module.exports = {
       type: {
         description: "The type of change you're committing",
         enum: {
-          '✨ feat': {
+          'feat': {
             description: 'A feature',
             title: 'Features',
           },
-          '🐛 fix': {
+          'fix': {
             description: 'A bug fix',
             title: 'Bug Fixes',
           },
-          '🦄 refactor': {
+          'refactor': {
             description:
               'A code change that neither fixes a bug nor adds a feature',
             title: 'Code Refactoring',
           },
-          '📜 docs': {
+          'docs': {
             description: 'Documentation only changes',
             title: 'Documentation',
           },
-          '🧪 test': {
+          'test': {
             description: 'Adding missing tests or correcting existing tests',
             title: 'Tests',
           },
-          '🤖 ci': {
+          'ci': {
             description: '(DO NOT USE) Code comitted by CI',
             title: 'CI',
           },
-          '🏎️ perf': {
+          'perf': {
             description: 'A performance improvement',
             title: 'Performance Improvements',
           },
-          '🧰 tooling': {
+          'tooling': {
             description:
               'Changes that affect the project or workspaces (file system, dev env, ci/cd)',
             title: 'Internal Tooling',
           },
-          '🧹 chore': {
+          'chore': {
             description: "Other changes that don't modify src or test files",
             title: 'Chores',
           },
-          '🚧 wip': {
+          'wip': {
             title: 'Work in progress',
             description: 'A work in progress',
           },
