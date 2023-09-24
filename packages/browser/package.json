@@ -8,6 +8,7 @@
   "status": "production",
   "license": "MIT",
   "author": "Michael Wolf <bigwoof91@gmail.com>",
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "directory": "packages/browser",
@@ -16,8 +17,8 @@
   "scripts": {
     "build": "tsup --dts",
     "build:quick": "tsup",
-    "tscheck": "tsc --noEmit",
-    "clean": "rimraf node_modules dist .turbo"
+    "clean": "rimraf node_modules dist .turbo",
+    "tscheck": "tsc --noEmit"
   },
   "devDependencies": {
     "rimraf": "^5.0.1",
