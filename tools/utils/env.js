@@ -11,7 +11,6 @@ const PACKAGES_PATH = join(ROOT_PATH, 'packages');
 
 const PRODUCTION = 'production';
 const DEVELOPMENT = 'development';
-const EXPERIMENTAL = 'experimental';
 const PACKAGE_STATUS_CONFIG = {
   // released or ready for release
   [PRODUCTION]: true,
@@ -21,7 +20,7 @@ const PACKAGE_STATUS_CONFIG = {
 
 global.__basedir = ROOT_PATH;
 
-module.exports = {
+const env = {
   ENV,
   isProduction,
   BUNDLE_OUTPUT_DIR,
@@ -29,6 +28,9 @@ module.exports = {
   PACKAGE_STATUS_CONFIG,
   PRODUCTION,
   DEVELOPMENT,
-  EXPERIMENTAL,
   ROOT_PATH,
+};
+
+module.exports = {
+  env,
 };

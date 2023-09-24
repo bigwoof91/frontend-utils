@@ -1,5 +1,5 @@
 const path = require('path');
-const { PACKAGE_STATUS_CONFIG, PACKAGES_PATH } = require('./env');
+const { env } = require('./env');
 
 const getPurePkgName = (pkgName) => pkgName.replace('@futil/', '');
 const isPublicPackage = (path) => path.includes('/frontend-utils/packages');
@@ -43,7 +43,7 @@ const getWorkspacesInfo = async (config = DEFAULT_CONFIG) => {
         }
         const pureName = getPurePkgName(name);
         const { pkgJson } = getWorkspaceData(data[name], pureName);
-        const isProductionReady = PACKAGE_STATUS_CONFIG[pkgJson.status];
+        const isProductionReady = env.PACKAGE_STATUS_CONFIG[pkgJson.status];
         if (config.hasProdStatus === false) {
           return !isProductionReady;
         } else if (config.hasProdStatus) {
@@ -61,7 +61,7 @@ const getWorkspacesInfo = async (config = DEFAULT_CONFIG) => {
       // push pure name
       purePkgNames.push(pureName);
       // push to coreDependencies if package is productionized (ready for release)
-      if (PACKAGE_STATUS_CONFIG[pkgJson.status]) {
+      if (env.PACKAGE_STATUS_CONFIG[pkgJson.status]) {
         coreDependencies[name] = `^${pkgJson.version}`;
       }
 
@@ -70,7 +70,7 @@ const getWorkspacesInfo = async (config = DEFAULT_CONFIG) => {
         pureName,
         relativeLocationFromCore: path.resolve(
           __dirname,
-          `${PACKAGES_PATH}/${pureName}`
+          `${env.PACKAGES_PATH}/${pureName}`
         ),
         version: pkgJson.version,
         ...workspaceInfo,

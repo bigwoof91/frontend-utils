@@ -1,6 +1,6 @@
-# futil
+# 🧰 @futil | Frontend Utilities
 
-A few useful frontend utilities or `futil`, for short 🙃
+A "few useful frontend utilities" or `futils` for short 🙃
 
 > ⚠️ WARNING: This library is a work in progress. Every release is at risk of
 > having breaking changes, until its first major release.
@@ -8,18 +8,19 @@ A few useful frontend utilities or `futil`, for short 🙃
 ## What is `futil`?
 
 This library was inspired by frontend engineers, trying to help other frontend
-engineers. This library is mean to provide:
+engineers. This library was created to provide any frontend engineer:
 
-1. any frontend engineer with utilities ranging from basic to advanced, as
-   needed
-2. the ability to use just 1 (or many) without incurring library bloat
+1. with utilities ranging from basic to advanced (as needed)
+2. the ability to use just 1 utility - or many - without incurring nasty library
+   bloat
 
-Some may bawk... why not just use something like `lodash`?
-
+<details>
+<summary>Why not just use something like <code>lodash</code> or <code>lodash.get</code>?</summary>
 While `lodash` is an amazing library, it provides different helpers; `lodash`
 simply serves a different purpose. `futil` doesn't offer common `javascript`
 utilities that help to shorten and optimize code. `futil` provides
-**_frontend_** utilities that don't really exist in a popular library.
+**_frontend_** utilities that don't really exist in an existing popular library.
+</details>
 
 ## Why `futil`?
 

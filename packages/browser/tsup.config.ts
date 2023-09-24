@@ -1,12 +1,11 @@
-import type { Options } from 'tsup';
-import { defineConfig } from 'tsup';
+import { defineConfig, type Options } from 'tsup';
 
 export default defineConfig((options: Options) => ({
   ...options,
-  entry: ['src'],
+  entry: ['src/**/*.ts'],
   treeshake: true,
   splitting: true,
   format: ['esm', 'cjs'],
-  minify: true,
+  minify: 'terser',
   clean: true,
 }));

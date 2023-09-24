@@ -1,24 +1,28 @@
 {
   "name": "@futil/browser",
   "version": "0.0.2",
-  "description": "Browser-related utilities",
+  "description": "Frontend utilities for the web browser.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "status": "production",
+  "license": "MIT",
+  "author": "Michael Wolf <bigwoof91@gmail.com>",
+  "repository": {
+    "type": "git",
+    "directory": "packages/browser",
+    "url": "https://github.com/futurestay/frontend-utils"
+  },
   "scripts": {
     "build": "tsup --dts",
     "build:quick": "tsup",
     "tscheck": "tsc --noEmit",
     "clean": "rimraf node_modules dist .turbo"
   },
-  "keywords": [],
-  "author": "Michael Wolf <bigwoof91@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "tsup": "^7.2.0"
-  },
   "devDependencies": {
-    "rimraf": "^5.0.1"
+    "rimraf": "^5.0.1",
+    "terser": "^5.20.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
   }
 }
