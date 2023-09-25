@@ -1,10 +1,3 @@
 {
-  "extends": "./config/.tsconfig/base.json",
-  "compilerOptions": {
-    "types": ["vitest/globals"],
-    "baseUrl": ".",
-    "paths": {
-      "@config/*": ["config/*"]
-    }
-  }
+  "extends": "./config/.tsconfig/base.json"
 }
