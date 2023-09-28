@@ -1,4 +1,4 @@
-import { getQueryParams } from '../src/get-query-params';
+import { getQueryParams } from '../get-query-params';
 
 describe('getQueryParams', () => {
   beforeEach(() => {

@@ -1,0 +1,13 @@
+#!/usr/bin/env zx
+
+const [, , , workspaceName, ...commandOrArgs] = process.argv;
+
+/**
+ * @example
+ *
+ * ```bash
+ * # call the script, pass the workspace name and the command you want to run in the workspace
+ * $ tools/futil-workspace-command core build
+ * ```
+ */
+$`pnpm --filter "@futil/${workspaceName}" ${commandOrArgs}`;

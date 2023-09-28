@@ -2,13 +2,14 @@
   "name": "@futil/{{kebabCase packageName}}",
   "version": "0.0.0",
   "description": "{{sentenceCase packageDescription}}.",
+  "author": "Michael Wolf <bigwoof91@gmail.com>",
+  "license": "MIT",
+  "status": "development",
+  "private": true,
+  "sideEffects": false,
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "status": "development",
-  "license": "MIT",
-  "author": "Michael Wolf <bigwoof91@gmail.com>",
-  "sideEffects": false,
   "repository": {
     "type": "git",
     "directory": "packages/{{kebabCase packageName}}",
@@ -21,7 +22,7 @@
     "clean": "rimraf node_modules dist .turbo"
   },
   "devDependencies": {
-    "rimraf": "^5.0.1",
+    "rimraf": "^5.0.5",
     "terser": "^5.20.0",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2"
