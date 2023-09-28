@@ -1,6 +1,0 @@
-__tests__
-src
-tools
-.turbo
-tsconfig.json
-tsup.config.ts
