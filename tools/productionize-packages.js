@@ -33,8 +33,8 @@ const getPackagesToProductionize = async () => {
     return logger.info('All packages are productionized already.');
   }
   /** update each original package.json */
-  packagesToProductionize.forEach(({ name, location }) => {
-    const pathToPkgJson = `${resolve(location)}/package.json`;
+  packagesToProductionize.forEach(({ name, path }) => {
+    const pathToPkgJson = `${resolve(path)}/package.json`;
     const pkgJson = fs.readFileSync(pathToPkgJson, 'utf-8');
 
     const output = JSON.parse(pkgJson);

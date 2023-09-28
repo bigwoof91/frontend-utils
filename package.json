@@ -11,9 +11,7 @@
     "___________DEVELOPMENT___________": "development scripts",
     "commit": "git cz",
     "setup": "pnpm i && husky install",
-    "browser": "pnpm --filter \"@futil/browser\"",
-    "core": "pnpm --filter \"@futil/core\"",
-    "config:eslint": "pnpm --filter \"eslint-config-futil\"",
+    "futil": "./tools/futil-workspace-command",
     "plop:pkg": "plop package",
     "qnm": "qnm",
     "___________QUALITY___________": "code quality and maintenance",
@@ -83,7 +81,8 @@
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
     "vitest": "^0.34.5",
-    "vitest-fetch-mock": "^0.2.2"
+    "vitest-fetch-mock": "^0.2.2",
+    "zx": "^7.2.3"
   },
   "devDependencies": {
     "husky": "^8.0.0"

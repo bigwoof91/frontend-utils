@@ -1,0 +1,32 @@
+{
+  "name": "@futil/v1",
+  "version": "0.0.0",
+  "description": "The initial package full of futils.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "status": "production",
+  "license": "MIT",
+  "author": "Michael Wolf <bigwoof91@gmail.com>",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "directory": "packages/v1",
+    "url": "https://github.com/futurestay/frontend"
+  },
+  "scripts": {
+    "build": "tsup --dts",
+    "build:quick": "tsup",
+    "tscheck": "tsc --noEmit",
+    "clean": "rimraf node_modules dist .turbo"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.1",
+    "terser": "^5.20.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "zx": "^7.2.3"
+  }
+}

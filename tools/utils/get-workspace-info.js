@@ -1,4 +1,3 @@
-const path = require('path');
 const { env } = require('./env');
 
 const getPurePkgName = (pkgName) => pkgName.replace('@futil/', '');
@@ -68,10 +67,6 @@ const getWorkspacesInfo = async (config = DEFAULT_CONFIG) => {
       return {
         name,
         pureName,
-        relativeLocationFromCore: path.resolve(
-          __dirname,
-          `${env.PACKAGES_PATH}/${pureName}`
-        ),
         version: pkgJson.version,
         ...workspaceInfo,
       };
