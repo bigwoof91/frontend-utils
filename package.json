@@ -85,6 +85,7 @@
     "zx": "^7.2.3"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.5",
     "husky": "^8.0.0"
   }
 }
