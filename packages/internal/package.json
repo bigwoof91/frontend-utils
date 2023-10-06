@@ -1,7 +1,7 @@
 {
-  "name": "@futil/{{kebabCase packageName}}",
+  "name": "@futil/internal",
   "version": "0.0.0",
-  "description": "{{sentenceCase packageDescription}}.",
+  "description": "Internal utilities for futil.",
   "author": "Michael Wolf <bigwoof91@gmail.com>",
   "license": "MIT",
   "status": "development",
@@ -12,7 +12,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "directory": "packages/{{kebabCase packageName}}",
+    "directory": "packages/internal",
     "url": "https://github.com/futurestay/frontend"
   },
   "scripts": {
@@ -26,5 +26,8 @@
     "terser": "^5.21.0",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "winston": "^3.10.0"
   }
 }
