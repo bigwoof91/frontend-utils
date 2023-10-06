@@ -5,6 +5,9 @@ module.exports = {
     node: true,
     browser: true,
   },
+  globals: {
+    vi: true,
+  },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 12,

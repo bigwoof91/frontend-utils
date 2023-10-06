@@ -1,17 +1,18 @@
 {
-  "name": "@futil/v1",
+  "name": "@futil/internal",
   "version": "0.0.0",
-  "description": "The initial package full of futils.",
+  "description": "Internal utilities for futil.",
+  "author": "Michael Wolf <bigwoof91@gmail.com>",
+  "license": "MIT",
+  "status": "development",
+  "private": true,
+  "sideEffects": false,
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "status": "production",
-  "license": "MIT",
-  "author": "Michael Wolf <bigwoof91@gmail.com>",
-  "sideEffects": false,
   "repository": {
     "type": "git",
-    "directory": "packages/v1",
+    "directory": "packages/internal",
     "url": "https://github.com/futurestay/frontend"
   },
   "scripts": {
@@ -25,5 +26,8 @@
     "terser": "^5.21.0",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "winston": "^3.10.0"
   }
 }

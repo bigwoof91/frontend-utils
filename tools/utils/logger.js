@@ -19,6 +19,7 @@ const makeNewLine = (condition = false) => (condition ? '\n' : '');
 makeNewLine.ifLast = (list = [], index = list.length - 1) =>
   index + 1 === list.length ? makeNewLine(true) : makeNewLine(false);
 /**
+ * @todo migrate to `winston`
  * @const logger a light wrapper around console.log with colorette
  * @method error
  * @method warn

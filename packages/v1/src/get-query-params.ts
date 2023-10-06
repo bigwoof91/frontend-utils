@@ -1,3 +1,7 @@
+/**
+ * @todo add description/docs
+ * @todo add exceptions and logger
+ */
 const getValue = <T = string>(name: string, fallback?: T) => {
   if (!window || !window?.location) return fallback;
 
