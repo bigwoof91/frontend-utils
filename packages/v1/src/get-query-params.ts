@@ -1,10 +1,10 @@
+import { logger } from '@futil/internal';
+
 /**
  * @todo add description/docs
  * @todo add exceptions and logger
  */
 const getValue = <T = string>(name: string, fallback?: T) => {
-  if (!window || !window?.location) return fallback;
-
   const url = window.location.href;
   const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
   const results = regex.exec(url);
@@ -17,8 +17,15 @@ const getValue = <T = string>(name: string, fallback?: T) => {
   return decodeURIComponent(value.replace(/\+/g, ' '));
 };
 
-const getQueryParams = <T = string>(names: string[], fallback?: T) => {
-  return names.map((name) => getValue(name, fallback));
+const getQueryParams = <T = string>(paramNames: string[], fallback?: T) => {
+  if (!window?.location) {
+    logger.warn({
+      src: 'getQueryParams',
+      message: '"window" is undefined and is required in order to get params.',
+    });
+    return fallback;
+  }
+  return paramNames.map((param) => getValue(param, fallback));
 };
 
 export { getQueryParams };

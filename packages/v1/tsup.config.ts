@@ -6,6 +6,6 @@ export default defineConfig((options: Options) => ({
   treeshake: true,
   splitting: true,
   format: ['esm', 'cjs'],
-  minify: 'terser',
+  minify: options.watch ? undefined : 'terser',
   clean: true,
 }));

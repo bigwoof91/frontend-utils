@@ -1,3 +1,4 @@
 # Automatically generated from "pnpm generate-packages"
 dist
+/internal
 /v1

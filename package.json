@@ -6,11 +6,12 @@
   "author": "Michael Wolf",
   "license": "MIT",
   "private": true,
-  "packageManager": "pnpm@8.7.6",
+  "packageManager": "pnpm@8.8.0",
   "scripts": {
     "___________DEVELOPMENT___________": "development scripts",
     "commit": "git cz",
     "setup": "pnpm i && husky install",
+    "dev": "turbo run dev",
     "futil": "./tools/futil-workspace-command",
     "plop:pkg": "plop package",
     "qnm": "qnm",
@@ -77,6 +78,7 @@
     "qnm": "^2.10.3",
     "rimraf": "^5.0.5",
     "terser": "^5.21.0",
+    "ts-node": "^10.9.1",
     "tsup": "^7.2.0",
     "turbo": "latest",
     "typescript": "^5.2.2",
@@ -84,8 +86,5 @@
     "vitest": "^0.34.6",
     "vitest-fetch-mock": "^0.2.2",
     "zx": "^7.2.3"
-  },
-  "devDependencies": {
-    "husky": "^8.0.0"
   }
 }

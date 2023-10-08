@@ -23,6 +23,7 @@
     "minify-bundle": "node ./tools/minify"
   },
   "dependencies": {
+    "@futil/internal": "^0.0.0",
     "@futil/v1": "^0.0.0"
   },
   "devDependencies": {
