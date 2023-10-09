@@ -3,9 +3,11 @@
   "version": "0.0.2",
   "status": "production",
   "description": "Contains all the utilities",
+  "homepage": "https://github.com/bigwoof91/frontend-utils#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bigwoof91/real-system.git"
+    "url": "git+https://github.com/bigwoof91/frontend-utils.git",
+    "directory": "packages/core/"
   },
   "author": "Michael Wolf <bigwoof91@gmail.com>",
   "license": "MIT",
@@ -23,6 +25,7 @@
     "minify-bundle": "node ./tools/minify"
   },
   "dependencies": {
+    "@futil/internal": "^0.0.0",
     "@futil/v1": "^0.0.0"
   },
   "devDependencies": {

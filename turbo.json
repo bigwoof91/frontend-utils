@@ -9,6 +9,9 @@
         "dependsOn": ["^build:quick"],
         "outputs": ["dist/**"]
       },
+      "dev": {
+        "cache": false
+      },
       "lint": {},
       "tscheck": {},
       "test": {

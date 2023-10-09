@@ -1,38 +1,57 @@
-import { createLogger, format, transports } from 'winston';
+/* eslint-disable no-console */
 
-const { combine, printf, json, colorize } = format;
+type ConsoleMethods = 'warn' | 'error' | 'log' | 'info';
 
-const getSrc = (src?: string) => (src ? `.${src}` : '');
+type LoggerMethodOptions = {
+  /** the name of the module/helper/function the message is logged from.  */
+  src?: string;
+  /** the name of the package the message is logged from.  */
+  pkg?: string;
+};
+
+type LoggerMethod = (
+  message: string,
+  /** Options that can be passed to logger. If a `string` is passed, it will be used as the `src` option. */
+  opts: LoggerMethodOptions | string
+) => void;
+
+type Logger = {
+  (opts: LoggerMethodOptions): void;
+  /**
+   * @param src name of the module/helper the message is logged from
+   * @param any the log message
+   * @returns {void}
+   */
+  error: LoggerMethod;
+  /** @callback {LoggerMethod} */
+  warn: LoggerMethod;
+  info: LoggerMethod;
+  log: LoggerMethod;
+};
+
+const makeMessage = (
+  message: string,
+  { src, pkg }: Partial<LoggerMethodOptions> = {}
+) => `@futil/${pkg || 'core'}${src ? `[${src}]` : ''}: ${message}`;
+
+const loggerMethod =
+  (method: ConsoleMethods = 'log'): LoggerMethod =>
+  (message, optsOrSrc = {}) => {
+    if (typeof optsOrSrc === 'string') {
+      return console[method](makeMessage(message, { src: optsOrSrc }));
+    }
+    console[method](makeMessage(message, optsOrSrc));
+  };
 
 /**
- * Internal logger for futil packages
- * @todo strongly type `meta`
- *
- * @example
- * ```ts
- *
- * log.error('Something is wrong', { src: 'windowRedirect' })
- * // output: '[@futil/v1.windowRedirect] error: Something is wrong'
- *
- * log.info('Information about something', { src: 'windowRedirect' })
- * // output: '[@futil/v1.windowRedirect] info: Information about something'
- *
- * log.info('Information about something', { pkg: 'v2', src: 'windowRedirect' })
- * // output: '[@futil/v2.windowRedirect] info: Information about something'
- * ```
+ * A light wrapper around `console` for logging within futil packages...
+ * but it only exposes a handful of `console` methods. More can be added as needed.
  */
-const log = createLogger({
-  level: 'info',
-  defaultMeta: { pkg: 'v1', src: '' },
-  format: combine(
-    colorize(),
-    json(),
-    printf(
-      (info) =>
-        `[${info.pkg}${getSrc(info.src)}] ${info.level}: ${info.message}`
-    )
-  ),
-  transports: [new transports.Console()],
-});
+// @ts-ignore
+const logger: Logger = loggerMethod();
+logger.info = loggerMethod('info');
+logger.warn = loggerMethod('warn');
+logger.error = loggerMethod('error');
 
-export { log };
+export type { Logger };
+export { logger };
