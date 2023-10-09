@@ -1,12 +1,19 @@
 /* eslint-disable no-console */
 
+type ConsoleMethods = 'warn' | 'error' | 'log' | 'info';
+
 type LoggerMethodOptions = {
-  src: string;
+  /** the name of the module/helper/function the message is logged from.  */
+  src?: string;
+  /** the name of the package the message is logged from.  */
   pkg?: string;
-  message: string;
 };
 
-type LoggerMethod = (opts: LoggerMethodOptions) => void;
+type LoggerMethod = (
+  message: string,
+  /** Options that can be passed to logger. If a `string` is passed, it will be used as the `src` option. */
+  opts: LoggerMethodOptions | string
+) => void;
 
 type Logger = {
   (opts: LoggerMethodOptions): void;
@@ -19,16 +26,22 @@ type Logger = {
   /** @callback {LoggerMethod} */
   warn: LoggerMethod;
   info: LoggerMethod;
-  table: LoggerMethod;
+  log: LoggerMethod;
 };
 
-const makeMessage = (message: string, src: string, pkg?: string) =>
-  `@futil/${pkg ? pkg : '*'}[${src}]: ${message}`;
+const makeMessage = (
+  message: string,
+  { src, pkg }: Partial<LoggerMethodOptions> = {}
+) => `@futil/${pkg || 'core'}${src ? `[${src}]` : ''}: ${message}`;
 
 const loggerMethod =
-  (method: keyof Logger | 'log' = 'log') =>
-  ({ src, pkg, message }: LoggerMethodOptions) =>
-    console[method](makeMessage(message, src, pkg));
+  (method: ConsoleMethods = 'log'): LoggerMethod =>
+  (message, optsOrSrc = {}) => {
+    if (typeof optsOrSrc === 'string') {
+      return console[method](makeMessage(message, { src: optsOrSrc }));
+    }
+    console[method](makeMessage(message, optsOrSrc));
+  };
 
 /**
  * A light wrapper around `console` for logging within futil packages...

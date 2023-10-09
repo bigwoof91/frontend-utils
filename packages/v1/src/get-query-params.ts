@@ -19,10 +19,10 @@ const getValue = <T = string>(name: string, fallback?: T) => {
 
 const getQueryParams = <T = string>(paramNames: string[], fallback?: T) => {
   if (!window?.location) {
-    logger.warn({
-      src: 'getQueryParams',
-      message: '"window" is undefined and is required in order to get params.',
-    });
+    logger.warn(
+      '"window" is undefined and is required in order to get params.',
+      'getQueryParams'
+    );
     return fallback;
   }
   return paramNames.map((param) => getValue(param, fallback));

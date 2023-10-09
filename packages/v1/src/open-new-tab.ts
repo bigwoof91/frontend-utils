@@ -6,11 +6,10 @@ import { logger } from '@futil/internal';
  */
 const openNewTab = (url: string) => {
   if (!window?.open) {
-    logger.warn({
-      src: 'openNewTab',
-      message:
-        '"window" is undefined and is required in order to open a new tab.',
-    });
+    logger.warn(
+      '"window" is undefined and is required in order to open a new tab.',
+      'openNewTab'
+    );
   }
 
   window.open(url, '_blank');
