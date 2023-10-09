@@ -11,24 +11,23 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "directory": "packages/v1",
-    "url": "https://github.com/futurestay/frontend"
+    "url": "git+https://github.com/bigwoof91/frontend-utils.git",
+    "directory": "packages/v1/"
   },
   "scripts": {
     "build": "tsup --dts",
     "build:quick": "tsup",
     "clean": "rimraf node_modules dist .turbo",
-    "dev": "pnpm build --watch",
+    "dev": "pnpm build:quick --watch",
     "tscheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@futil/internal": "workspace:^",
+    "@futil/internal": "workspace:*",
     "rimraf": "^5.0.5",
-    "terser": "^5.21.0",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "@futil/internal": "workspace:^"
+    "@futil/internal": "workspace:*"
   }
 }
