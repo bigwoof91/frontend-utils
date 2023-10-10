@@ -11,7 +11,7 @@ export default defineConfig({
     setupFiles: './vitest.setup-tests.ts',
     watch: false,
     coverage: {
-      provider: 'istanbul',
+      provider: 'v8',
       reporter: ['text', 'json-summary', 'json'],
       include: ['packages/v1/**'],
     },
