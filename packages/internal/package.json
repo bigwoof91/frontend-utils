@@ -19,8 +19,8 @@
     "build": "tsup --dts",
     "build:quick": "tsup",
     "clean": "rimraf node_modules dist .turbo",
-    "prepack": "clean-package -c ../../clean-package.config.json",
-    "postpack": "clean-package r -c ../../clean-package.config.json",
+    "prepack": "clean-package -c ../../config/.clean-package/clean-package.config.json",
+    "postpack": "clean-package r -c ../../config/.clean-package/clean-package.config.json",
     "dev": "pnpm build:quick --watch",
     "tscheck": "tsc --noEmit"
   },
