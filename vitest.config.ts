@@ -10,6 +10,11 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './vitest.setup-tests.ts',
     watch: false,
+    coverage: {
+      provider: 'istanbul',
+      reporter: ['json-summary', 'json'],
+      include: ['packages/v1/**'],
+    },
     // you might want to disable it, if you don't have tests that rely on CSS
     // since parsing CSS is slow
     css: true,
