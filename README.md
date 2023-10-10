@@ -29,7 +29,7 @@ _Or_ install individual futil packages
 
 ```bash
 $ pnpm add @futil/v1
-# When you install an individual package, be sure to add peer dependencies yourself
+# When you install an individual package be sure to add peer dependencies yourself
 $ pnpm add @futil/internal
 ```
 
