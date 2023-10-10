@@ -1,4 +1,4 @@
-name: Quality and Release
+name: Release
 
 on:
   push:

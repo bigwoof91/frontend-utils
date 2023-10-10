@@ -20,10 +20,13 @@
     "build": "tsup --dts",
     "build:quick": "tsup",
     "clean": "rimraf node_modules dist .turbo",
-    "dev": "pnpm build:quick -- --watch",
+    "prepack": "clean-package -c ../../clean-package.config.json",
+    "postpack": "clean-package r -c ../../clean-package.config.json",
+    "dev": "pnpm build:quick --watch",
     "tscheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "clean-package": "^2.2.0",
     "rimraf": "^5.0.5",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2"

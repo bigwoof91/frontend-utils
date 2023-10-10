@@ -4,3 +4,4 @@ tools
 .turbo
 tsconfig.json
 tsup.config.ts
+*.backup

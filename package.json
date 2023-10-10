@@ -12,7 +12,7 @@
     "commit": "git cz",
     "setup": "pnpm i && husky install",
     "dev": "turbo run dev",
-    "futil": "./tools/futil-workspace-command",
+    "fwc": "./tools/futil-workspace-command",
     "plop:pkg": "plop package",
     "qnm": "qnm",
     "___________QUALITY___________": "code quality and maintenance",
