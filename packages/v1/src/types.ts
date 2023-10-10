@@ -1,5 +1,14 @@
-type AnyFunc<T extends any[] = [], R = any> = (...args: T) => R;
+/** https://developer.mozilla.org/en-US/docs/Glossary/Primitive */
+type Primitive = null | undefined | string | number | boolean | symbol | bigint;
 
-type Booleanish = boolean | 'true' | 'false';
+/**
+ * A workaround for [Microsoft/TypeScript#29729](https://github.com/Microsoft/TypeScript/issues/29729).
+ * Hoping we can remove this sometime... soon!
+ */
+type Union<LiteralType, BaseType extends Primitive> =
+  | LiteralType
+  | (BaseType & Record<never, never>);
 
-export type { AnyFunc, Booleanish };
+type AnyFunc<T = any, R = any> = (...args: T[]) => R;
+
+export type { AnyFunc, Primitive, Union };
