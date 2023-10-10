@@ -12,7 +12,7 @@ export default defineConfig({
     watch: false,
     coverage: {
       provider: 'istanbul',
-      reporter: ['json-summary', 'json'],
+      reporter: ['text', 'json-summary', 'json'],
       include: ['packages/v1/**'],
     },
     // you might want to disable it, if you don't have tests that rely on CSS
