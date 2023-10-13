@@ -1,5 +1,14 @@
 # @futil/v1
 
+## 0.0.2
+
+### Patch Changes
+
+- [#19](https://github.com/bigwoof91/frontend-utils/pull/19)
+  [`469c1e3`](https://github.com/bigwoof91/frontend-utils/commit/469c1e39b63514f094498b2e20db077be58e10db)
+  Thanks [@bigwoof91](https://github.com/bigwoof91)! - add runIfFn and
+  isFunction helpers along with type helpers
+
 ## 0.0.1
 
 ### Patch Changes
