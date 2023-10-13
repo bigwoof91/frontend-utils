@@ -24,7 +24,12 @@ jobs:
         run: pnpm tscheck
 
       - name: Run tests
-        run: pnpm test
+        run: pnpm test:coverage
+
+      - name: Report Coverage
+        if: always() # generate the report even when tests are failing
+        uses:  davelosert/vitest-coverage-report-action@v2
+
   package-size:
     name: Diff compressed package sizes
     runs-on: ubuntu-latest
