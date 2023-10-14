@@ -1,5 +1,13 @@
 # @futil/core
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies
+  [[`469c1e3`](https://github.com/bigwoof91/frontend-utils/commit/469c1e39b63514f094498b2e20db077be58e10db)]:
+  - @futil/v1@0.0.2
+
 ## 0.0.3
 
 ### Patch Changes
