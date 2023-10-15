@@ -1,7 +1,7 @@
 # 🧰 Frontend Utils ([`@futil/core`](https://www.npmjs.com/package/@futil/core))
 
-![npm (scoped)](https://img.shields.io/npm/v/%40futil/core?logo=npm)
-![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/%40futil/core)
+<a href="https://www.npmjs.com/package/@futil/core"><img src="https://img.shields.io/npm/v/%40futil/core?logo=npm&label=%40futil/core&color=orange" alt="npm version" height="18"/></a>
+<a href="https://www.npmjs.com/package/@futil/core"><img src="https://img.shields.io/bundlephobia/minzip/%40futil/core" alt="npm version" height="18"/></a>
 
 A library containing a <ins>few useful frontend utilities</ins> or `futil` for
 short 🙃
@@ -37,7 +37,7 @@ $ pnpm add @futil/internal
 ```
 
 <details>
-<summary><b>How do you know what the peer dependencies to install?</b></summary>
+<summary><b>How do you know which peer dependencies to install?</b></summary>
 After installing the package, let's say <code>@futil/v1</code>, read the output of the install command or feel free to check the <code>package.json</code> of the package you installed by going into <code>node_modules/@futil/v1/package.json</code>.
 </details>
 
