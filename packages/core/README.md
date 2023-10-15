@@ -16,3 +16,25 @@ $ yarn add @futil/core
 # pnpm
 $ pnpm add @futil/core
 ```
+
+## Usage
+
+```tsx
+import { spread } from '@futil/core/v1/spread';
+// or
+// import { spread } from '@futil/core/v1';
+import {
+  SomeOtherComponent,
+  type SomeOtherComponentProps,
+} from 'some-other-component';
+
+type MyReactComponentProps = {
+  someOtherComponentProps?: SomeOtherComponentProps;
+};
+
+const MyReactComponent = ({
+  someOtherComponentProps,
+}: MyReactComponentProps) => {
+  return <SomeOtherComponent {...spread(someOtherComponentProps)} />;
+};
+```

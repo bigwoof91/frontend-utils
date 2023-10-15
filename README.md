@@ -1,4 +1,7 @@
-# 🧰 futil
+# 🧰 Frontend Utils ([`@futil/core`](https://www.npmjs.com/package/@futil/core))
+
+![npm (scoped)](https://img.shields.io/npm/v/%40futil/core?logo=npm)
+![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/%40futil/core)
 
 A library containing a <ins>few useful frontend utilities</ins> or `futil` for
 short 🙃
