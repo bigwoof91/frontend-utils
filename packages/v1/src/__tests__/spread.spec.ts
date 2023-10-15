@@ -15,15 +15,9 @@ describe('spread', () => {
     it('Returns the default value', () => {
       const value1 = spread(null);
       const value2 = spread(undefined, []);
-      const value3 = spread(false, []);
-      const value4 = spread(0);
-      const value5 = spread('');
 
       expect(value1).toEqual({});
       expect(value2).toEqual([]);
-      expect(value3).toEqual([]);
-      expect(value4).toEqual({});
-      expect(value5).toEqual({});
     });
   });
 });

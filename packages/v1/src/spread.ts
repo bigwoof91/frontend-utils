@@ -5,7 +5,7 @@ import type { AnyArr, AnyObj, Nil } from './types';
  * without losing its type inference.
  *
  * @description A helper that accepts an optional collection (e.g. array or object)
- * and if the collection is nillish (e.g. `false`, `undefined`, `null`),
+ * and if the collection is nil (`undefined`, `null`),
  * it will return `{}` or a `defaultValue` which is provided via the
  * second argument.
  */
