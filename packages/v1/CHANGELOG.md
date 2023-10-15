@@ -1,5 +1,19 @@
 # @futil/v1
 
+## 0.0.3
+
+### Patch Changes
+
+- [#21](https://github.com/bigwoof91/frontend-utils/pull/21)
+  [`702a37f`](https://github.com/bigwoof91/frontend-utils/commit/702a37f7369faa311b620d4efdccf06db5d49364)
+  Thanks [@bigwoof91](https://github.com/bigwoof91)! - Add callAll helper
+  function
+
+- [#23](https://github.com/bigwoof91/frontend-utils/pull/23)
+  [`7ca902e`](https://github.com/bigwoof91/frontend-utils/commit/7ca902e3a3f29cb45a66a024d194789adf7ab602)
+  Thanks [@bigwoof91](https://github.com/bigwoof91)! - Add spread() and
+  callWith() helpers
+
 ## 0.0.2
 
 ### Patch Changes

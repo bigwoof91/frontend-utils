@@ -1,6 +1,6 @@
 {
   "name": "@futil/v1",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The initial package full of futils.",
   "main": "src/index.ts",
   "files": [
