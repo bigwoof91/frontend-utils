@@ -15,4 +15,9 @@ type FuncArgs<T extends AnyFunc> = T extends (...args: infer R) => any
   ? R
   : never;
 
-export type { AnyFunc, FuncArgs, Primitive, Union };
+type AnyObj = Record<PropertyKey, any>;
+type AnyArr = any[];
+
+type Nil = null | undefined | false | 0 | '';
+
+export type { AnyArr, AnyFunc, AnyObj, FuncArgs, Nil, Primitive, Union };
