@@ -11,4 +11,8 @@ type Union<LiteralType, BaseType extends Primitive> =
 
 type AnyFunc<T = any, R = any> = (...args: T[]) => R;
 
-export type { AnyFunc, Primitive, Union };
+type FuncArgs<T extends AnyFunc> = T extends (...args: infer R) => any
+  ? R
+  : never;
+
+export type { AnyFunc, FuncArgs, Primitive, Union };
