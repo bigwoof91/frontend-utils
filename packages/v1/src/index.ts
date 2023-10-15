@@ -1,3 +1,4 @@
+export * from './call-all';
 export * from './get-query-params';
 export * from './is-function';
 export * from './open-new-tab';
