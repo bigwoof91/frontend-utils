@@ -1,4 +1,6 @@
-# 🧰 Frontend Utils ([`@futil/core`](https://www.npmjs.com/package/@futil/core))
+# 🧰 futil
+
+A library containing a few useful frontend utilities (aka futil) ([`@futil/core`](https://www.npmjs.com/package/@futil/core))
 
 <a href="https://www.npmjs.com/package/@futil/core"><img src="https://img.shields.io/npm/v/%40futil/core?logo=npm&label=%40futil/core&color=orange" alt="npm version" height="18"/></a>
 <a href="https://www.npmjs.com/package/@futil/core"><img src="https://img.shields.io/bundlephobia/minzip/%40futil/core" alt="npm version" height="18"/></a>
